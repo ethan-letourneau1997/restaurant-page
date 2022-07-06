@@ -3,12 +3,13 @@ export function switchToContact() {
         const addMainContent = (() => {
             let mainContent = document.createElement('section');
             mainContent.classList.add('main-content');
+            mainContent.classList.add('contact-main');
             main.appendChild(mainContent);
 
             const addContactTitle = (() => {
                 let contactTitle =  document.createElement('div');
                 contactTitle.classList.add('title');
-                contactTitle.innerText = 'CONTACT';
+                contactTitle.innerText = 'Location';
                 mainContent.appendChild(contactTitle);
             })();
 
@@ -24,11 +25,12 @@ export function switchToContact() {
 
                 const addContacts = (() => {
 
-                    function addContact(num, name){
+                    function addContact(num){
                         let contact = document.createElement('div');
                         contact.id = "contact-" + num;
                         contact.classList.add('menu-item');
-                        contact.innerText = name;
+                        contact.classList.add('contact-item');
+                        contact.classList.add('contact');
 
                         let contactImage = document.createElement('div')
                         contactImage.id = "contact-image-"+ num;
@@ -38,9 +40,7 @@ export function switchToContact() {
                         contactSection.appendChild(contact);
                     }
 
-                    addContact(1, 'CONTACT 1');
-                    addContact(2, 'CONTACT 2');
-                    addContact(3, 'CONTACT 3')
+                    addContact(1);
                 })();
             })();
         })();
